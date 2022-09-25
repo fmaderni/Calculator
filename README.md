@@ -1,1 +1,1 @@
-Calulator proyect
+Calulator project
