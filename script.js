@@ -1,5 +1,10 @@
+let operator = '';
+let currentValue = '';
+let previousValue = '';
+
 const btn = document.querySelectorAll('.button');
-const dspl = document.querySelector('.display');
+const crntDspl = document.querySelector('.current');
+const prvsDspl = document.querySelector('.previous');
 const oper = document.querySelectorAll('.op');
 
 const clear = document.getElementById('clear');
@@ -53,28 +58,30 @@ function readOp(a, b, op) {
 }
 
 function clearDisp() {
-    dspl.innerHTML = '';
+    crntDspl.innerHTML = '';
 }
 
 function deleteNumb() {
-    dspl.innerHTML = dspl.innerHTML.slice(0, -1)
+    crntDspl.innerHTML = crntDspl.innerHTML.slice(0, -1)
 }
 
 function invert() {
-    const neg = -Number(dspl.innerHTML);
-    dspl.innerHTML = neg;
+    const neg = -Number(crntDspl.innerHTML);
+    crntDspl.innerHTML = neg;
+    console.log(neg);
+    console.log(typeof(neg))
 }
 
 function insertComa() {
-    if (dspl.innerHTML === '')
-        dspl.innerHTML = '0';
-    if (!dspl.innerHTML.includes(','))
-        return dspl.innerHTML += ',';
+    if (crntDspl.innerHTML === '')
+        crntDspl.innerHTML = '0';
+    if (!crntDspl.innerHTML.includes(','))
+        return crntDspl.innerHTML += ',';
 }
 
 function display(e) {
     const value = e.target.dataset.value;
-    dspl.innerHTML += value;
+    crntDspl.innerHTML += value;
 }
 
 function calculate() {
