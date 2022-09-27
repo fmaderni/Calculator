@@ -12,7 +12,6 @@ const clear = document.getElementById('clear');
 const dlt = document.getElementById('del');
 const chgsgn = document.getElementById('inv');
 const coma = document.getElementById('coma');
-const factor = document.getElementById('factor');
 const res = document.getElementById('equ');
 
 clear.addEventListener('click', clearDisp);
@@ -100,13 +99,3 @@ res.addEventListener('click', function () {
     crntDspl.innerHTML = currentValue;
 });
 
-factor.addEventListener('click', function () {
-    let total = currentValue
-    if (currentValue == 0 || currentValue == 1)
-        return 1
-    while (currentValue > 1) {
-        currentValue--;
-        total *= currentValue;
-    }
-    return total;
-});
