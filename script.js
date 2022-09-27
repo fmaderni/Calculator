@@ -12,24 +12,13 @@ const clear = document.getElementById('clear');
 const dlt = document.getElementById('del');
 const chgsgn = document.getElementById('inv');
 const coma = document.getElementById('coma');
+const factor = document.getElementById('factor');
 const res = document.getElementById('equ');
 
 clear.addEventListener('click', clearDisp);
 dlt.addEventListener('click', deleteNum);
 chgsgn.addEventListener('click', invert);
 coma.addEventListener('click', insertComa);
-
-
-function fact(a) {
-    var total = a
-    if (a == 0 || a == 1)
-        return 1
-    while (a > 1) {
-        a--;
-        total *= a;
-    }
-    return total;
-};
 
 function clearDisp() {
     currentValue = '';
@@ -109,4 +98,15 @@ res.addEventListener('click', function () {
     calculate();
     prvsDspl.innerText = previousValue
     crntDspl.innerHTML = currentValue;
+});
+
+factor.addEventListener('click', function () {
+    let total = currentValue
+    if (currentValue == 0 || currentValue == 1)
+        return 1
+    while (currentValue > 1) {
+        currentValue--;
+        total *= currentValue;
+    }
+    return total;
 });

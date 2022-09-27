@@ -60,3 +60,8 @@ h1 {
     border-radius: 5px;
     margin: 3px;
 }
+
+#equ {
+   display: flex;
+   width: 170px;
+}
