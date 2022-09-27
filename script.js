@@ -39,8 +39,8 @@ function invert() {
 function insertComa() {
     if (crntDspl.innerText === '')
         crntDspl.innerText = '0';
-    if (!crntDspl.innerText.includes(','))
-        crntDspl.innerText += ',';
+    if (!crntDspl.innerText.includes('.'))
+        crntDspl.innerText += '.';
     currentValue = crntDspl.innerText;
 };
 
